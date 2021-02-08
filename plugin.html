@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>plugin</title>
+		
+        <style>
+            
+            .box {
+                width: 200px;
+                height: 200px;
+                background: blue;
+                margin: 20px auto;
+            }
+            
+        </style>
+        
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+		
+	</head>
+	<body style="text-align: center;">
+        
+        
+		<div class="box"></div>
+        <button>Change Background</button>
+        
+        <script>
+            
+        $(document).ready(function(){
+            $.fn.backgrounChange = function(options = "yellow") {
+                return this.css({
+                    background: options
+                })
+            };
+            
+            $("button").click(function(){
+                $("div").backgrounChange("red")
+            })
+        })
+        
+        </script>
+	</body>
+</html>
